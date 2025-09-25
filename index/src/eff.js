@@ -2,7 +2,7 @@
 // Dynamic Footer Email
 // ------------------------
 function injectContactEmail(selector = "#contact-link") {
-  fetch("contact.json")
+  fetch("/index/src/contact.json")
     .then(res => res.json())
     .then(data => {
       const email = data.email;
@@ -70,6 +70,6 @@ function adjustSkillBoxes() {
     }
   });
 }
-
+document.addEventListener("DOMContentLoaded", () => injectContactEmail());
 window.addEventListener('load', adjustSkillBoxes);
 window.addEventListener('resize', adjustSkillBoxes);
